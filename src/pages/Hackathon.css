@@ -1,0 +1,301 @@
+
+/*.card-body.teamcard{
+    width: 35rem;
+}
+.card-body.usercard{
+    width: 35rem;
+}*/
+
+.teamcard{
+    width: 100vw;
+}
+/*
+.usercard{
+    width: 100vw;
+}*/
+.teamcard .rounded-circle {
+    width: 60px;
+}
+
+.namebox{
+    justify-content: center;
+    position: relative;
+    color:black;
+    top:-400px;
+    font-size:30px;
+}
+
+img.hackathonImg{
+    position: relative;
+
+    border: 5px solid rgb(110, 110, 110);
+    border-radius: 100%;
+    height: 160px;
+    width: 160px;
+}
+
+.addme{
+    width: 100%;
+}
+.addtxt{
+    position: relative;
+    top:-575px;
+}
+
+.flexbox{
+    position:relative;
+    top:-375px;
+}
+
+.location{
+    font-size: 15px;
+    color: black;
+    position: relative;
+    bottom:0;
+
+    vertical-align: bottom;
+}
+
+.date{
+    font-size: 15px;
+    color: black;
+    position: relative;
+    /*top:175px;
+    right: 50px;*/
+}
+
+.rectanglehack{
+    position:relative;
+    width:100%;
+    height:470px;
+    background: url('https://million-wallpapers.com/wallpapers/3/1/460708392402944.jpg') center center fixed;
+    opacity: 0.7;
+    /*background:rgb(172, 172, 204);*/
+}
+
+.addyourself{ 
+    position:relative;
+    top:330px;
+}
+
+.addbtn img{
+    position:relative;
+    top:-100px;
+    height:100%;
+    width: 5%;
+    animation: move 1s infinite alternate;
+}
+
+.addbtn Button{
+    position:relative;
+    width:100%;
+    top:-50px;
+    
+}
+
+.btn-block {
+    display: block;
+    width: 19%;
+}
+
+
+
+.alreadymatched{
+    width: 19%;
+}
+.btn-duo button{
+    position: relative;
+    top:50px;
+    width:100%;
+    cursor: pointer;
+}
+
+
+.matchedUsers, .availableTeams{
+    position: relative;
+    top:200px;
+    margin-bottom:500px;
+}
+
+
+.usercard{
+    margin-bottom:8px;
+}
+.profilepic{
+    width: 200px;
+}
+
+.addedtxt{
+    position:relative;
+    top:-300px;
+}
+.sec1{
+    margin-bottom:500px;
+}
+@keyframes move{
+    from{
+        transform:translateY(0px);
+    }
+    to{
+        transform:translateY(40px);
+    }
+}
+/*
+img.hackathonImg{
+    
+    position: relative;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 5px solid rgb(110, 110, 110);
+    border-radius: 100%;
+    height: 140px;
+    width: 140px;
+    
+}
+*/
+/*Small*/
+@media (min-width: 576px) { 
+    .addme{
+        width: 100%;
+    }
+    .rectanglehack{
+        height:250px;
+    }
+
+}
+/*MD*/
+@media (min-width: 768px) { 
+    .flexbox{
+        top:-125px;
+    }
+    .namebox{
+        font-size:30px;
+        top:-150px;
+    }
+    .date, .location{
+        font-size:20px;
+        top:50px;
+    }
+    .rectanglehack{
+        height:250px;
+    }
+    .addme{
+        width: initial;
+    }
+    .addtxt{
+        top:-350px; 
+    }
+    .matchme{
+        margin-right:200px;
+        width: 19%;
+    }
+    .btn-duo button{
+   
+    top:200px;
+    width:initial;
+    }
+    .addedtxt{
+        
+        top:0px;
+    }
+    .addbtn img{
+        
+        top:0px;
+        
+    }
+    .addbtn Button{
+        top:50px;
+        
+    }
+    .teamcard .rounded-circle {
+        width: 80px;
+    }
+
+}
+@media (min-width: 992px) { 
+    .namebox{
+        font-size:35px;
+        top:-150px;
+    }
+    .date, .location{
+        font-size:25px;
+        top:30px;
+    }
+    .addbtn Button{
+       
+        width:25%;
+    }
+    .teamcard .rounded-circle {
+    
+        width: 6.1rem;
+    }
+    /*
+    .usercard{
+        width: 28rem;
+    }*/
+}
+@media (min-width: 1200px) { 
+    .namebox{
+        font-size:40px;
+    }
+    .date, .location{
+        font-size:20px;
+    }
+    .rectanglehack{
+        height:300px;
+    }
+    /*
+    .usercard{
+        width: 32rem;
+    }
+    */
+}
+
+/*
+@media (min-width: 992px) { 
+    .namebox{
+        font-size:35px;
+    }
+    .date, .location{
+        font-size:25px;
+    }
+    .rectangle{
+        height:260px;
+    }
+    .addtxt{
+       top:-150px; 
+    }
+    .matchme{
+        margin-right:200px;
+        width: 19%;
+    }
+.btn-duo button{
+    position: relative;
+    top:500px;
+    width:initial;
+}
+}
+@media (min-width: 1200px) { 
+    .namebox{
+        font-size:40px;
+    }
+    .date, .location{
+        font-size:30px;
+    }
+    .rectangle{
+        height:270px;
+    }
+    .addtxt{
+       top:-150px; 
+    }
+    .matchme{
+        margin-right:200px;
+        width: 19%;
+    }
+    .btn-duo button{
+    position: relative;
+    top:500px;
+    width:initial;
+}
+} */

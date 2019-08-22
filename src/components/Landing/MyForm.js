@@ -62,8 +62,8 @@ class MyForm extends React.Component {
     event.preventDefault();
     axios.post(`https://arcane-fjord-29308.herokuapp.com/auth/login`, 
       {
-        "email":"test@test.com",
-        "password":"test"
+        "email": this.state.email,
+        "password": this.state.password
       }).then(res => {
         console.log(res);
         console.log(res.data);
