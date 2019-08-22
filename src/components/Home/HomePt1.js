@@ -23,7 +23,7 @@ class HomePt1 extends React.Component {
   };
   }
   componentDidMount() {
-    var url='http://localhost:5000/hackathons';
+    var url='https://warm-spire-34930.herokuapp.com/hackathons';
     var config = {
       headers: {'Authorization': 'Bearer ' + localStorage.auth_token.toString()}
     };
