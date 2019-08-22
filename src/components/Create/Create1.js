@@ -49,7 +49,7 @@ class Create1 extends React.Component {
   }
 
   componentDidMount() {
-    var url='http://localhost:5000/hackathons/get';
+    var url='https://arcane-fjord-29308.herokuapp.com/hackathons/get';
     var config = {
       headers: {'Authorization': 'Bearer ' + localStorage.auth_token.toString()}
     };
@@ -170,7 +170,7 @@ class Create1 extends React.Component {
         
         var hackathonSelected = this.state.hack;
         console.log(this.state.hack)
-        var url = "http://localhost:5000/hackathons/"+hackathonSelected+"/getmatch";
+        var url = "https://arcane-fjord-29308.herokuapp.com/hackathons/"+hackathonSelected+"/getmatch";
         var config = {
           headers: {'Authorization': 'Bearer ' + localStorage.auth_token.toString()}
         };

@@ -7,6 +7,8 @@ import Add from '../pages/Add';
 import Create from '../pages/Create';
 import TeamPage from '../pages/TeamPage';
 import Hackathon from '../pages/Hackathon';
+import Profile from '../pages/Profile';
+import Home from '../pages/Home';
 
 class ReactRouter extends React.Component {
   render() {
@@ -15,9 +17,8 @@ class ReactRouter extends React.Component {
         <Route exact path='/' component={Landing} />
       <Route path="/account" exact component={Account} />
       <Route path="/register" exact component={Registration} />
-      {/* <Route path="/home" exact component={Home} />
-      
-      <Route path="/profile/:id" exact component={Profile}/> */}
+      <Route path="/home" exact component={Home} />
+      <Route path="/profile/:id" exact component={Profile}/>
       <Route path="/hackathon/:name" exact component={Hackathon}/>
       <Route path="/create" exact component={Create}/>
       <Route path="/add" exact component={Add}/>

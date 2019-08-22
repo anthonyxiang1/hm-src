@@ -36,7 +36,7 @@ class Sec1 extends React.Component {
           
            var hackathonName = this.props.match.params.name;
            console.log(hackathonName);
-           var url = 'http://127.0.0.1:5000/hackathons/'+hackathonName;
+           var url = 'https://arcane-fjord-29308.herokuapp.com/hackathons/'+hackathonName;
           axios.get(url)
           .then((res) =>{
               console.log(res);
@@ -206,7 +206,7 @@ class Sec1 extends React.Component {
             var config = {
                 headers: {'Authorization': 'Bearer ' + localStorage.auth_token.toString()}
             };
-            axios.get('http://127.0.0.1:5000/hackathons/'+hackathonName+'/addmatch', config)
+            axios.get('http://arcane-fjord-29308.herokuapp.com/hackathons/'+hackathonName+'/addmatch', config)
             .then(res => {
                 console.log(res)
                 if(res.status == 200){
@@ -214,7 +214,7 @@ class Sec1 extends React.Component {
                 }else if(res.status == 201){
                     // already in pool
                 }
-                axios.get('http://127.0.0.1:5000/hackathons/'+hackathonName+'/findmymatches', config)
+                axios.get('https://arcane-fjord-29308.herokuapp.com/hackathons/'+hackathonName+'/findmymatches', config)
                   .then(res => {
                     console.log(res);
                     console.log(res.data);

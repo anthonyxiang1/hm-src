@@ -47,7 +47,7 @@ class Add1 extends React.Component {
   }
 
   componentDidMount() {
-    var url='http://localhost:5000/teams';
+    var url='https://arcane-fjord-29308.herokuapp.com/teams';
     var config = {
       headers: {'Authorization': 'Bearer ' + localStorage.auth_token.toString()}
     };
@@ -143,7 +143,7 @@ class Add1 extends React.Component {
     if (this.baseState.memberList.length < this.state.memberList.length && this.state.hackathonchoice != ""){
       //console.log(this.state)
       var hackathonSelected = "hackPrinceton";
-      var url = "http://localhost:5000/teams/"+hackathonSelected+"add";
+      var url = "https://arcane-fjord-29308.herokuapp.com/teams/"+hackathonSelected+"add";
       var config = {
         headers: {'Authorization': 'Bearer ' + localStorage.auth_token.toString()}
       };
