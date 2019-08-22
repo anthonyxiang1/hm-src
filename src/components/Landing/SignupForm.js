@@ -113,7 +113,7 @@ class SignupForm extends React.Component {
           errMsg: "password needs to be at least 6 characters long."
         });
   
-        axios.post(`http://127.0.0.1:5000/auth/signup`, 
+        axios.post(`https://arcane-fjord-29308.herokuapp.com/auth/signup`, 
         {
           "firstname":this.state.firstName,
           "lastname": this.state.lastName,
