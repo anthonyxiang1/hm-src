@@ -18,9 +18,9 @@ class Sec1 extends React.Component {
       }
 
       componentDidMount() {
-        var teamId = this.props.match.params.id;
-        console.log(teamId);
-        var url='https://arcane-fjord-29308.herokuapp.com/teams/'+teamId;
+        // var teamId = this.props.match.params.id;
+        // console.log(teamId);
+        // var url='https://arcane-fjord-29308.herokuapp.com/teams/'+teamId;
         axios.get(url)
           .then(res => {
             console.log(res);

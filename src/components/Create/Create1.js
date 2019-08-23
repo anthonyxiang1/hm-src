@@ -233,7 +233,7 @@ class Create1 extends React.Component {
 
               
             }).catch(      //todo: handle error
-              alert("something went wrong")
+              this.props.history.push("/team/sample")
           );
         //
   }
