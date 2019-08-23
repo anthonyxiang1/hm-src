@@ -22,6 +22,7 @@ class Sec1 extends React.Component {
             hackLoc: "Stony Brook, NY",
             school: "Stony Brook University",
             propic: "",
+            memberpics: [],
           members: [],
           teams: []
         };
@@ -52,6 +53,7 @@ class Sec1 extends React.Component {
     render() {
         
         const {members} = this.state;
+        const {teams} = this.state;
 
         return (
             <div className="sec1">
@@ -157,9 +159,9 @@ class Sec1 extends React.Component {
                         <Row>
                             <h2><strong>Available Teams</strong></h2>
                         </Row>
-                        {this.state.teams.map((item, index) => ( 
+                        {teams.map((item, index) => ( 
                         <Row>
-                        <TeamCard name={item.name} goals={item.goals}  tags={item.tags} propic={item.propic} id={item.id}
+                        <TeamCard name={item.name} goals={item.goals} propic={item.memberpics} id={item.id}
                         />
                         </Row>
                         ))}
@@ -230,7 +232,9 @@ class Sec1 extends React.Component {
                     //for team
 
                     console.log(JSON.parse(teams[0])['members'].length)
-                    console.log(JSON.parse(teams[0])['members'][0])
+                    console.log(JSON.parse(JSON.parse(teams[0])['members'][0]))
+                    console.log("propic link")
+                    console.log(JSON.parse(JSON.parse(teams[0])['members'][0])['profile_pic'])
 
                     for (var i=0;i<teams.length;i++) {
                         this.setState({ teams: this.state.teams.concat([{
@@ -240,11 +244,8 @@ class Sec1 extends React.Component {
                         }])
                         })
                             for (var j=0;j<JSON.parse(teams[i])['members'].length; j++)
-                                this.setState({ teams: this.state.teams.concat([{
-                                    propic: JSON.parse(JSON.parse(teams[i])['members'][j])['profile_pic']
-                                }])
-                                })
-                            };
+                                this.state.memberpics.concat(JSON.parse(JSON.parse(teams[0])['members'][0])['profile_pic'])
+                          };
                      })
                
             }).catch((err) =>{      //todo: handle error
