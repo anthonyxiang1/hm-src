@@ -36,12 +36,11 @@ class Account1 extends React.Component {
         
         this.state = {
           page: true,
-          propic: "",
-          username: "Mary Ng",
+          username: "",
           educationLvl: "High School",
           year: "2020",
           major: "Computer Engineering",
-          propic: "http://api.randomuser.me/portraits/women/12.jpg",
+          propic: require("../Hackathon/graysquare.png"),
           school: "Georgia Tech",
           about: "about me goes here, any projects, what your goal is (looking to win)",
           goals: ['to win the competition', 'make new friends', 'visit friends'],
@@ -61,7 +60,6 @@ class Account1 extends React.Component {
       
           
         };
-        this.baseState = this.state;
       }
 
       componentDidMount() {
@@ -94,7 +92,7 @@ class Account1 extends React.Component {
                    goals: data['preferences']['goals'] || 0
                    //url: data['social']
               });
-         
+              this.baseState = this.state
             })
         }
 
