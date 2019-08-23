@@ -232,17 +232,17 @@ class Sec1 extends React.Component {
                                                                     preferences: JSON.parse(hackers[i]['hacker'])['preferences'],
                                                                     propic: JSON.parse(hackers[i]['hacker'])['profile_pic']}]) });  
                     }
-                    var teams = res.data['hackers'];
-                    console.log(JSON.parse(teams[0]['id']))
+                    var teams = res.data['teams'];
+                    console.log(JSON.parse(teams[0])['id'])
                    
                     //for team
 
                     for (var i=0;i<teams.length;i++) {
                         this.setState({ teams: this.state.teams.concat([{
-                            name: JSON.parse(teams[i]['team'])['name'],
-                            goals: JSON.parse(teams[i]['team'])['goals'],
-                            id: JSON.parse(teams[i]['team'])['id'],
-                            propic: JSON.parse(teams[i]['team'])['profile_pic']
+                            name: JSON.parse(teams[i])['name'],
+                            goals: JSON.parse(teams[i])['goals'],
+                            id: JSON.parse(teams[i])['id'],
+                            propic: JSON.parse(teams[i])['profile_pic']
                         }])
                         })};
                      
