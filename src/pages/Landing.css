@@ -105,6 +105,10 @@
       top: 300%;
       height: 100%;
     }
+
+    .pt4 {
+      background: url('../components/Landing/assets/landing_bg.jpg') no-repeat center center fixed;
+    }
     
   }
 
@@ -215,6 +219,10 @@
       top: 240%;
       height: 100%;
     }
+
+    .pt4 {
+      background: url('../components/Landing/assets/landing_bg.jpg') no-repeat center center fixed;
+    }
     
   }
 
@@ -323,6 +331,10 @@
     right: 0;
     top: 240%;
     height: 100%;
+  }
+
+  .pt4 {
+    background: url('../components/Landing/assets/landing_bg.jpg') no-repeat center center fixed;
   }
   
 }

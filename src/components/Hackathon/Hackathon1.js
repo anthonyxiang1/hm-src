@@ -21,6 +21,7 @@ class Sec1 extends React.Component {
             endDate: "Jan 28",
             hackLoc: "Stony Brook, NY",
             school: "Stony Brook University",
+            propic: "",
           members: [],
           teams: [
               {name: "Found 405", 
@@ -49,11 +50,10 @@ class Sec1 extends React.Component {
                 endDate:hackathon['end_date'],
                 hackLoc: hackathon['city']+', '+hackathon['state'],
                 school:hackathon['school'],
-                propic:hackathon['propic']
+                propic:hackathon['logo']
             });
           })
         }
-
 
     render() {
         
@@ -86,7 +86,7 @@ class Sec1 extends React.Component {
                 <br></br>
 
                 <Container className="flexbox" >
-                    about: {this.state.about}
+                    {this.state.about}
                 </Container>
 
                 <Container className="addbtn" >
@@ -233,18 +233,18 @@ class Sec1 extends React.Component {
                                                                     propic: JSON.parse(hackers[i]['hacker'])['profile_pic']}]) });  
                     }
                     var teams = res.data['teams'];
-                    console.log(JSON.parse(teams[0]['team']))
+                    // console.log(JSON.parse(teams[0]['team']))
                    
-                    //for team
+                    // //for team
 
-                    for (var i=0;i<teams.length;i++) {
-                        this.setState({ teams: this.state.teams.concat([{
-                            name: JSON.parse(teams[i]['team'])['name'],
-                            goals: JSON.parse(teams[i]['team'])['goals'],
-                            id: JSON.parse(teams[i]['team'])['id'],
-                            propic: JSON.parse(teams[i]['team'])['profile_pic']
-                        }])
-                        })};
+                    // for (var i=0;i<teams.length;i++) {
+                    //     this.setState({ teams: this.state.teams.concat([{
+                    //         name: JSON.parse(teams[i]['team'])['name'],
+                    //         goals: JSON.parse(teams[i]['team'])['goals'],
+                    //         id: JSON.parse(teams[i]['team'])['id'],
+                    //         propic: JSON.parse(teams[i]['team'])['profile_pic']
+                    //     }])
+                    //     })};
                      
                 })
                
