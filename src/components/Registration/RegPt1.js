@@ -730,13 +730,13 @@ class RegPt1 extends React.Component {
       'gradYear': this.state.year,
       'numOfHackathons': this.state.hackCount
     }
-    var preferences = {
-      'interests': this.state.interests || [],
-      'fields': this.state.fields || [],
-      'technologies': this.state.tech || [],
-      'languages': this.state.languages || [],
-      'goals': this.state.goals
-    }
+    // var preferences = {
+    //   'interests': this.state.interests || [],
+    //   'fields': this.state.fields || [],
+    //   'technologies': this.state.tech || [],
+    //   'languages': this.state.languages || [],
+    //   'goals': this.state.goals
+    // }
     var social = this.state.url;
     // var social = {
     //   'website': links[1],
@@ -748,6 +748,40 @@ class RegPt1 extends React.Component {
     //   'slack':links[3],
     //   'instagram': links[4]
     // } 
+    function validatePreferences(constant, preferences, toggle){
+      const filtered = [];
+      if (toggle){
+        for(var i = 0; i < preferences.length; i++){
+          if(constant.includes(preferences[i]['name'])){
+            filtered.push(preferences[i]);
+          }
+        }
+      }else{
+        for(var i = 0; i < preferences.length; i++){
+          if(constant.includes(preferences[i])){
+            filtered.push(preferences[i]);
+          }
+        }
+      }
+    }
+
+    var interestsConstants = ['AI', 'CV', 'ML', 'Theory', 'Bioinformatics','Cloud Computing','Data science', 'Big Data', 'Data Visualization', 'Block Chain', 'AR/VR', 'Robotics', 'Hardware','Mechanical Design', 'Electrical Engineering', 'UI/UX Design', 'Web Dev', 'iOS Dev', 'Android Dev', 'HCI', 'Graphics', 'Gaming', 'Networks', 'Database management', 'NoSQL', 'Game Development', 'Android Development']
+    var languagesConstants = ['Javascript', 'Jquery','Java', 'C#', 'PHP', 'Android', 'Python', 'HTML', 'CS', 'Swift', 'Ruby On Rails', 'SQL', 'C', 'C++', 'Go', 'Objective-C']
+    var technologiesConstants = ['Oculus', 'Apache', 'React Native', 'D3', 'React', 'Spark', 'Flask', 'Django', 'Node.js', 'MongoDB', 'ASP.net', 'Ruby', 'Objective-C', 'Angular', 'Vue.js', 'Laravel', 'Pandas', 'Oracle', 'Bootstrap', 'Azure', 'Tensorflow', 'Google-Cloud', 'Firebase', 'Google-Maps', 'Oracle', 'Xamarin', 'Ionic', 'Heroku']
+    var fieldsConstants = ['Finance', 'Health', 'Mental Health', 'Education', 'Environmental', 'Science', 'Social Networking', 'Astronomy', 'Human Assistance', 'Music', 'Art', 'Helping Developing Countries', 'Cars', 'Sports', 'Social conflicts', 'Disaster Relief']
+    var filteredInterests = validatePreferences(interestsConstants, this.state.interests, false);
+    var filteredLanguages = validatePreferences(languagesConstants, this.state.languages, true);
+    var filteredtechnologies = validatePreferences(technologiesConstants, this.state.tech, true);
+    var filteredFields = validatePreferences(fieldsConstants, this.state.fields, false);
+
+    var preferences = {
+      'interests': filteredInterests || [],
+      'fields': filteredFields || [],
+      'technologies': filteredtechnologies || [],
+      'languages': filteredLanguages || [],
+      'goals': this.state.goals
+    }
+
     var careScores = {
       'interests': this.state.similarInt,
       'languages': this.state.similarLang,
