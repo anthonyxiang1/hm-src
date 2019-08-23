@@ -22,7 +22,7 @@ class HackathonCard extends React.Component {
             <div className="content row">
             <div className="hackcard col-md-5 offset-md-1">
                 <div className="firstinfo">
-                  <a href='d'><img className="d-block mx-auto rounded-circle img-fluid" src={this.state.hackInfo.profile_pic}></img></a>
+                  <a href={`/hackathon/${this.state.hackInfo.name}`}><img className="d-block mx-auto rounded-circle img-fluid" src={this.state.hackInfo.logo}></img></a>
                   <div className="profileinfo">
                       <a href={`/hackathon/${this.state.hackInfo.name}`}><h1>{this.state.hackInfo.name}</h1></a>
                       <i>{this.state.hackInfo.school}</i>
