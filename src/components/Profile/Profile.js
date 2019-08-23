@@ -46,7 +46,8 @@ class Profile1 extends React.Component {
                  fields: data['preferences']['fields'] || [],
                  interests: data['preferences']['interests'] || [],
                  hackathons: data['profile']['numOfHackathons'] || 0,
-                 goals: data['preferences']['goals'] || 0
+                 goals: data['preferences']['goals'] || 0,
+                 propic: data['profile_pic']
             });
           })
     } 

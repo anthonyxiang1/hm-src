@@ -207,10 +207,9 @@ class Create1 extends React.Component {
           var config = {
             headers: {'Authorization': 'Bearer ' + localStorage.auth_token.toString()}
           };
-          var members = ['5d5ace40432fa135145b2c96', '5d5ace35432fa135145b2c7b']
           var data = {
             'hackathon': hackathonSelected,
-            'members': members,//this.state.members,
+            'members': this.state.members,
             'name': this.state.name || '',
             'idea': this.state.idea || '',
             'goal': this.state.goal || '',

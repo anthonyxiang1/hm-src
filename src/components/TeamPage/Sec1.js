@@ -16,6 +16,22 @@ class Sec1 extends React.Component {
         };
       }
 
+      componentDidMount() {
+        var teamId = this.props.match.params.teamId;
+        console.log(teamId);
+        var url='https://arcane-fjord-29308.herokuapp.com/teams/'+teamId;
+        axios.get(url)
+          .then(res => {
+            console.log(res);
+            var teaminfo = JSON.parse(res.data['team']);
+            console.log(teaminfo);
+            this.setState({
+                teamname: teaminfo['name'],
+                idea: teaminfo['idea']
+            });
+          });
+      }
+
     render() {
 
         return (
