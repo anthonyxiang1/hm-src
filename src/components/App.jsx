@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import './Header.js'
 
 export default class AppWrapper extends React.Component {

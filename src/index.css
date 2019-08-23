@@ -1,5 +1,27 @@
-body {
-  margin: 0;
-  padding: 1rem;
-  font-family: sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+body, html {
+  height: 100%;
+  width: 100%;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Open Sans;
+  line-height: 1.4;
+}
+
+.center {
+  text-align: center;
+}
+
+/*image can't be found from pages - Landing.css (maybe move assets into pages?)*/
+.pt4 {
+  background: url('../src/components/Landing/assets/landing_bg.jpg') no-repeat center center fixed;
+}
+

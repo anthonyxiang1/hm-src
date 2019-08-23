@@ -1,8 +1,6 @@
 import React from "react";
 import {Form, Button, Col, Row, Container, ProgressBar} from 'react-bootstrap';
 import { withRouter } from 'react-router-dom';
-
-import decode from 'jwt-decode';
 import axios from 'axios';
 
 class RegPt1 extends React.Component {
@@ -833,7 +831,7 @@ class RegPt1 extends React.Component {
   handleNextSubmit(event){
     event.preventDefault(); 
     if (this.state.school !== "" && this.state.gender !== "" 
-        && this.state.major !== "" && this.state.year !== "" && this.state.education !== "" && this.state.hackCount !== "") {
+        && this.state.major !== "" && this.state.year !== "" && this.state.education !== "" && this.state.hackCount !== -1) {
     this.setState({
       page: this.state.page+1,
       errMsg: true

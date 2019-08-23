@@ -108,11 +108,12 @@ class SignupForm extends React.Component {
           errMsg: "password and confirm password do not match."
         });
   
-        if (this.state.password.length < 6)
+        else if (this.state.password.length < 6)
           this.setState({
           errMsg: "password needs to be at least 6 characters long."
         });
-  
+        
+        else {
         axios.post(`https://arcane-fjord-29308.herokuapp.com/auth/signup`, 
         {
           "firstname":this.state.firstName,
@@ -130,7 +131,7 @@ class SignupForm extends React.Component {
         // var data = JSON.stringify({"name": "kenny GOng", "email":"abc@gmail.com", "password": "qwer"});
         // store.dispatch(fetchItems(url, data, "POST"));
       };
-
+    }
 
 }
 export default withRouter(SignupForm)
