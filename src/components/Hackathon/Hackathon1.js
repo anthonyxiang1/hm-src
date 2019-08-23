@@ -22,7 +22,7 @@ class Sec1 extends React.Component {
             hackLoc: "Stony Brook, NY",
             school: "Stony Brook University",
             propic: "",
-            memberpics: [],
+            memberpics: ["https://randomuser.me/api/portraits/women/81.jpg", "https://randomuser.me/api/portraits/women/81.jpg"],
           members: [],
           teams: []
         };
@@ -244,11 +244,11 @@ class Sec1 extends React.Component {
                         }])
                         })
                             for (var j=0;j<JSON.parse(teams[i])['members'].length; j++) 
-                                this.state.memberpics.concat(JSON.parse(JSON.parse(teams[i])['members'][j])['profile_pic'])
+                                console.log(JSON.parse(JSON.parse(teams[i])['members'][j])['profile_pic'])
                           };
                      })
 
-                     
+
                console.log(this.state.memberpics)
 
 
