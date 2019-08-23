@@ -226,17 +226,16 @@ class Create1 extends React.Component {
           axios.post(url, data, config)
             .then(res => {
               var teamId = JSON.parse(res.data)['team_id']
-              if (res.status_code === 402) {
-                console.log(res);
-                alert("one or more users are not registered for this hackathon or is in another team in this hackathon")
-              }
-              else{
+              
+              
               console.log(res);
               this.props.history.push("/team/" + teamId)
 
-              }
-            })
-        //}
+              
+            }).catch(      //todo: handle error
+              alert("something went wrong")
+          );
+        //
   }
 
   deleteName(event){
