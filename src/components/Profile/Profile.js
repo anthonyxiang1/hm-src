@@ -9,19 +9,20 @@ class Profile1 extends React.Component {
         super(props);
         
         this.state = {
-          username: "Anthony Xiang",
+          username: "Bobby Fisher",
           educationLvl: "college",
           year: "2022",
-          major: "art",
-          school: "sbu",
+          major: "Applied Mathematics",
+          school: "Georgia Tech",
+          propic: "http://api.randomuser.me/portraits/men/28.jpg",
           goals: ['to win the competition', 'make new friends', 'visit friends'],
-          about: "about me goes here, any projects, what your goal is (looking to win)",
-          url: ["http://linkedin.com/in/jaketrent", "http://twitter.com", 'a@gmail.com', 'github.com', 'facebook.com'],
-          languages: [{name: "java", skill: 8}, {name: "python", skill: 3}],
-          tech: [{name: "ML", skill: 8}, {name: "aws", skill: 3}],
-          fields: ["health", "edu"],
-          interests: ["ML", "else"],
-          hackathons: 2,
+          about: "Hey everyone! I am a frontend developer specializing in ReactJS and data visualizations with D3. I'd love to help any team that uses these in their project.",
+          url: ["http://linkedin.com/in/jaketrent", "http://twitter.com", 'github.com', 'facebook.com'],
+          languages: [{name: "Java", skill: 8}, {name: "Python", skill: 3}],
+          tech: [{name: "Azure", skill: 8}, {name: "AWS", skill: 3}],
+          fields: ["healthcare", "education technology"],
+          interests: ["Data visualization", "Machine Learning"],
+          hackathons: 4,
         };
         this.baseState = this.state;
       }
@@ -103,7 +104,7 @@ class Profile1 extends React.Component {
                     {/* <div className="accent">Interests</div> */}
                     <img
                         alt="propic"
-                        src={require("./assets/favicon.jpg")}
+                        src={this.state.propic}
                         className="avatar"
                     />
                     <h1 >{this.state.username}</h1>

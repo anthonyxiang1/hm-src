@@ -73,6 +73,7 @@ class Sec1 extends React.Component {
                     <Row>
                          <Col xs={{span:12}} sm={{span:12}} md={{span:4, order:2}} lg={{span:4, order:2}} xl={{span:4, order:2}}>
                             <img id="hackathonImg"
+                                alt="hackathonImg"
                                 src={require("./stuyhacks.png")}
                                 className="hackathonImg">
                             </img>
@@ -209,9 +210,9 @@ class Sec1 extends React.Component {
             axios.get('https://arcane-fjord-29308.herokuapp.com/hackathons/'+hackathonName+'/addmatch', config)
             .then(res => {
                 console.log(res)
-                if(res.status == 200){
+                if(res.status === 200){
                     // add to pool success!
-                }else if(res.status == 201){
+                }else if(res.status === 201){
                     // already in pool
                 }
                 axios.get('https://arcane-fjord-29308.herokuapp.com/hackathons/'+hackathonName+'/findmymatches', config)
@@ -231,13 +232,22 @@ class Sec1 extends React.Component {
                                                                     preferences: JSON.parse(hackers[i]['hacker'])['preferences'],
                                                                     propic: JSON.parse(hackers[i]['hacker'])['profile_pic']}]) });  
                     }
+                    var teams = res.data['teams'];
+                    console.log(JSON.parse(teams[0]['team']))
+                   
                     //for team
-                    // name: JSON.parse(hackers[i]['hacker'])['name'],
-                    // goals: JSON.parse(hackers[i]['hacker'])['goals'],
-                    // id: JSON.parse(hackers[i]['hacker'])['id'],
-                    // propic: JSON.parse(hackers[i]['hacker'])['profile_pic']
 
-                  });
+                    for (var i=0;i<teams.length;i++) {
+                        this.setState({ teams: this.state.teams.concat([{
+                            name: JSON.parse(teams[i]['team'])['name'],
+                            goals: JSON.parse(teams[i]['team'])['goals'],
+                            id: JSON.parse(teams[i]['team'])['id'],
+                            propic: JSON.parse(teams[i]['team'])['profile_pic']
+                        }])
+                        })};
+                     
+                })
+               
             }).catch((err) =>{      //todo: handle error
                 console.log(err);
             });

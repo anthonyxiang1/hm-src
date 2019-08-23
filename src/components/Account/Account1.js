@@ -37,29 +37,29 @@ class Account1 extends React.Component {
         this.state = {
           page: true,
           propic: "",
-          username: "Anthony Xiang",
-          educationLvl: "college",
-          year: "2022",
-          major: "art",
-          school: "sbu",
+          username: "Mary Ng",
+          educationLvl: "High School",
+          year: "2020",
+          major: "Computer Engineering",
+          propic: "http://api.randomuser.me/portraits/women/12.jpg",
+          school: "Georgia Tech",
           about: "about me goes here, any projects, what your goal is (looking to win)",
-          goals: [''],
-          url: ['github.com',"http://linkedin.com/in/jaketrent", "http://twitter.com", 'a@gmail.com', 'facebook.com'],
-          languages: [{name: "java", skill: 8}, {name: "python", skill: 3}],
-          tech: [{name: "ML", skill: 8}, {name: "aws", skill: 3}],
-          fields: ["health", "edu"],
-          interests: ["ML", "else"],
+          goals: ['to win the competition', 'make new friends', 'visit friends'],
+          url: ['github.com','facebook.com', 'twitter.com', 'slack.com'],
+          languages: [{name: "C++", skill: 10}, {name: "Javascript", skill: 5}],
+          tech: [{name: "Flask", skill: 8}, {name: "AWS", skill: 4}],
+          fields: ["Healthcare", "Biology"],
+          interests: ["Frontend Development", "UI/UX Design"],
           hackathons: 2,
           password: "",
           confirmPass: "", 
 
-
-          goalsBase: ['to win the competition', 'make new friends', 'visit friends'],
-          urlBase: ["http://linkedin.com/in/jaketrent", "http://twitter.com", 'a@gmail.com', 'github.com', 'facebook.com'],
-          languagesBase: [{name: "java", skill: 8}, {name: "python", skill: 3}],
-          techBase: [{name: "ML", skill: 8}, {name: "aws", skill: 3}],
-          fieldsBase: ["health", "edu"],
-          interestsBase: ["ML", "else"]
+          intList: ['AI', 'CV', 'ML', 'Theory', 'Bioinformatics','Cloud Computing','Data science', 'Big Data', 'Data Visualization', 'Block Chain', 'AR/VR', 'Robotics', 'Hardware','Mechanical Design', 'Electrical Engineering', 'UI/UX Design', 'Web Dev', 'iOS Dev', 'Android Dev', 'HCI', 'Graphics', 'Gaming', 'Networks', 'Database management', 'NoSQL', 'Game Development'],
+          langList: ['Javascript', 'Jquery','Java', 'C#', 'PHP', 'Android', 'Python', 'HTML', 'CS', 'Swift', 'Ruby On Rails', 'SQL', 'C', 'C++', 'Go', 'Objective-C'],
+          techList : ['Oculus', 'Apache', 'React Native', 'D3', 'React', 'Spark', 'Flask', 'Django', 'Node.js', 'MongoDB', 'ASP.net', 'Ruby', 'Objective-C', 'Angular', 'Vue.js', 'Laravel', 'Pandas', 'Oracle', 'Bootstrap', 'Azure', 'Tensorflow', 'Google-Cloud', 'Firebase', 'Google-Maps', 'Oracle', 'Xamarin', 'Ionic', 'Heroku'],
+          fieldList : ['Finance', 'Health', 'Mental Health', 'Education', 'Environmental', 'Science', 'Social Networking', 'Astronomy', 'Human Assistance', 'Music', 'Art', 'Helping Developing Countries', 'Cars', 'Sports', 'Social conflicts', 'Disaster Relief']
+      
+          
         };
         this.baseState = this.state;
       }
@@ -94,6 +94,7 @@ class Account1 extends React.Component {
                    goals: data['preferences']['goals'] || 0
                    //url: data['social']
               });
+         
             })
         }
 
@@ -248,19 +249,21 @@ class Account1 extends React.Component {
         axios.post('https://arcane-fjord-29308.herokuapp.com/auth/account', postData, config).then(res => {
             console.log(res);
             console.log(res.data);
-        }).then(res => {this.props.history.push("/account");})
+         }).then(this.setState({page: true}) )
+
+         //res => {this.props.history.push("/account");}
         console.log(this.state)
     }
 
     handleProfileCancel(event){
-
-        this.setState({ goals: this.state.goalsBase})
-        this.setState({ fields: this.state.fieldsBase})
-        this.setState({ url: this.state.urlBase})
-        this.setState({ languages: this.state.languagesBase})
-        this.setState({ tech: this.state.techBase})
-        this.setState({ interests: this.state.interestsBase})
         this.setState(this.baseState)
+         this.setState({ goals: this.baseState.goals})
+         this.setState({ fields: this.baseState.fields})
+         this.setState({ url: this.baseState.url})
+         this.setState({ languages: this.baseState.languages})
+         this.setState({ tech: this.baseState.tech})
+         this.setState({ interests: this.baseState.interests})
+        this.setState({page: true})
     }
     
   render() {
@@ -323,7 +326,7 @@ class Account1 extends React.Component {
                     {/* <div className="accent">Interests</div> */}
                     <img
                         alt="propic"
-                        src={require("./assets/favicon.jpg")}
+                        src={this.state.propic}
                         className="avatar"
                     />
                     <h1 >{this.state.username}</h1>
@@ -409,7 +412,7 @@ class Account1 extends React.Component {
                         <Col className="info" sm={4}>
                             <img
                             alt="propic"
-                            src={require("./assets/favicon.jpg")}
+                            src={this.state.propic}
                             className="avatar"
                             />
                             <h1 >{this.state.username}</h1>
@@ -434,6 +437,41 @@ class Account1 extends React.Component {
                                         </form>
                                 </div>
                             </div>
+                            <br></br>
+                            <Card className="center w-75">
+                    <Card.Header><strong>Social Media</strong></Card.Header>
+                        <Card.Body>
+                            <Card.Text>
+                                
+                                    {
+                                    this.state.url.map((url, index)=> {
+                                        return (
+                                        <div key={index}>
+                                            <Form.Group className="form-inline">
+                                            <Form.Control
+                                            type="text"
+                                            style={{width: "75%"}}
+                                            placeholder="Linkedin, Github, etc."
+                                            onChange= {(e) => this.handleURLChange(e, index)}
+                                            id={url}
+                                            value={url} 
+                                            className="name"
+                                            />
+                                            
+                                            <Button variant="danger" onClick={() => this.handleRemoveURLForm(index)}>-</Button>
+                                            </Form.Group>
+                                        </div>
+                                        )
+                                    })
+                                    }
+
+
+                                <br></br>
+                            
+                            <Button variant="outline-primary" onClick={this.handleSocial}>Add Link</Button>
+                            </Card.Text>
+                        </Card.Body>
+                    </Card>
                         </Col>
 
                             <Col className ="about">
@@ -556,41 +594,6 @@ class Account1 extends React.Component {
                 {/****************** SOCIAL MEDIA LANGUAGES FIELDS AND HACKATHONS */}
                 
                 <Col sm={4}>
-                    <Card className="center w-75">
-                    <Card.Header><strong>Social Media</strong></Card.Header>
-                        <Card.Body>
-                            <Card.Text>
-                                
-                                    {
-                                    this.state.url.map((url, index)=> {
-                                        return (
-                                        <div key={index}>
-                                            <Form.Group className="form-inline">
-                                            <Form.Control
-                                            type="text"
-                                            style={{width: "75%"}}
-                                            placeholder="Linkedin, Github, etc."
-                                            onChange= {(e) => this.handleURLChange(e, index)}
-                                            id={url}
-                                            value={url} 
-                                            className="name"
-                                            />
-                                            
-                                            <Button variant="danger" onClick={() => this.handleRemoveURLForm(index)}>-</Button>
-                                            </Form.Group>
-                                        </div>
-                                        )
-                                    })
-                                    }
-
-
-                                <br></br>
-                            
-                            <Button variant="outline-primary" onClick={this.handleSocial}>Add Link</Button>
-                            </Card.Text>
-                        </Card.Body>
-                    </Card>
-                    <br></br>
 
                     <Card className="center w-75">
                     <Card.Header><strong>Languages</strong> <span>(max 5)</span></Card.Header>
@@ -612,21 +615,9 @@ class Account1 extends React.Component {
                                             className="name"
                                             >
                                                 <option>{languages.name}</option>
-                                                <option>Javascript</option>
-                                                <option>Java</option>
-                                                <option>PHP</option>
-                                                <option>Android</option>
-                                                <option>Python</option>
-                                                <option>HTML</option>
-                                                <option>CSS</option>
-                                                <option>iOS</option>
-                                                <option>Swift</option>
-                                                <option>Ruby on Rails</option>
-                                                <option>SQL</option>
-                                                <option>C</option>
-                                                <option>C++</option>
-                                                <option>C#</option>
-                                                <option>Go</option>
+                                                {this.state.langList.map((item, index) => ( 
+                                                    <option>{item}</option>
+                                                ))}
                                             </Form.Control>
                                             <Form.Control
                                             as="select"
@@ -682,22 +673,9 @@ class Account1 extends React.Component {
                                         className="name"
                                         >
                                             <option>{tech.name}</option>
-                                            <option>ReactJS</option>
-                                            <option>RESTful API</option>
-                                            <option>D3</option>
-                                            <option>Flask</option>
-                                            <option>Django</option>
-                                            <option>MongoDB</option>
-                                            <option>Node.js</option>
-                                            <option>ASP.net</option>
-                                            <option>Angular.js</option>
-                                            <option>Json</option>
-                                            <option>Pandas</option>
-                                            <option>Bootstrap</option>
-                                            <option>Azure</option>
-                                            <option>Google Cloud</option>
-                                            <option>Firebase</option>
-                                            <option>Heroku</option>
+                                            {this.state.techList.map((item, index) => ( 
+                                                    <option>{item}</option>
+                                                ))}
                                         </Form.Control>
                                         <Form.Control
                                         as="select"
@@ -778,25 +756,9 @@ class Account1 extends React.Component {
                                 className="name"
                                 >
                                     <option>{interests}</option>
-                                    <option>Artificial Intelligence</option>
-                                    <option>Computer Vision</option>
-                                    <option>Machine Learning</option>
-                                    <option>Medical Imaging</option>
-                                    <option>Theory</option>
-                                    <option>Hardware</option>
-                                    <option>Networks</option>
-                                    <option>Graphics</option>
-                                    <option>Human-Computer Interaction</option>
-                                    <option>Game Development</option>
-                                    <option>Data Visualization</option>
-                                    <option>AR/VR</option>
-                                    <option>UI/UX Design</option>
-                                    <option>Data Science</option>
-                                    <option>iOS Development</option>
-                                    <option>Android Development</option>
-                                    <option>Frontend Development</option>
-                                    <option>Backend Development</option>
-                                    <option>Fullstack Development</option>
+                                    {this.state.intList.map((item, index) => ( 
+                                                    <option>{item}</option>
+                                                ))}
                                 </Form.Control>
                                 
                                 <Button variant="danger" onClick={() => this.handleRemoveINTERESTForm(index)}>-</Button>
@@ -828,24 +790,9 @@ class Account1 extends React.Component {
                                 className="name"
                                 >
                                     <option>{fields}</option>
-                                    <option>Finance</option>
-                                    <option>Health</option>
-                                    <option>Education</option>
-                                    <option>Environment</option>
-                                    <option>Biology</option>
-                                    <option>Chemistry</option>
-                                    <option>Physics</option>
-                                    <option>Mathematics</option>
-                                    <option>Social Networking</option>
-                                    <option>Astronomy</option>
-                                    <option>Human Assistance</option>
-                                    <option>Music</option>
-                                    <option>Art</option>
-                                    <option>Helping Developing Countries</option>
-                                    <option>Cars</option>
-                                    <option>Sports</option>
-                                    <option>Social conflicts</option>
-                                    <option>Disaster Relief</option>
+                                    {this.state.fieldList.map((item, index) => ( 
+                                                    <option>{item}</option>
+                                                ))}
                                 </Form.Control>
                                 
                                 <Button variant="danger" onClick={() => this.handleRemoveFIELDForm(index)}>-</Button>

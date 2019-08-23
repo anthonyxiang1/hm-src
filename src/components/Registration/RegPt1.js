@@ -52,6 +52,10 @@ class RegPt1 extends React.Component {
       similarTech: "",
       similarLang: "",
       similarField: "",
+      intList: ['AI', 'CV', 'ML', 'Theory', 'Bioinformatics','Cloud Computing','Data science', 'Big Data', 'Data Visualization', 'Block Chain', 'AR/VR', 'Robotics', 'Hardware','Mechanical Design', 'Electrical Engineering', 'UI/UX Design', 'Web Dev', 'iOS Dev', 'Android Dev', 'HCI', 'Graphics', 'Gaming', 'Networks', 'Database management', 'NoSQL', 'Game Development'],
+	langList: ['Javascript', 'Jquery','Java', 'C#', 'PHP', 'Android', 'Python', 'HTML', 'CS', 'Swift', 'Ruby On Rails', 'SQL', 'C', 'C++', 'Go', 'Objective-C'],
+	techList : ['Oculus', 'Apache', 'React Native', 'D3', 'React', 'Spark', 'Flask', 'Django', 'Node.js', 'MongoDB', 'ASP.net', 'Ruby', 'Objective-C', 'Angular', 'Vue.js', 'Laravel', 'Pandas', 'Oracle', 'Bootstrap', 'Azure', 'Tensorflow', 'Google-Cloud', 'Firebase', 'Google-Maps', 'Oracle', 'Xamarin', 'Ionic', 'Heroku'],
+	fieldList : ['Finance', 'Health', 'Mental Health', 'Education', 'Environmental', 'Science', 'Social Networking', 'Astronomy', 'Human Assistance', 'Music', 'Art', 'Helping Developing Countries', 'Cars', 'Sports', 'Social conflicts', 'Disaster Relief']
     };
   }
 
@@ -304,22 +308,10 @@ class RegPt1 extends React.Component {
                               value={languages.name} 
                               className="name"
                               >
-                                  <option>{languages.name}</option>
-                                  <option>Javascript</option>
-                                  <option>Java</option>
-                                  <option>PHP</option>
-                                  <option>Android</option>
-                                  <option>Python</option>
-                                  <option>HTML</option>
-                                  <option>CSS</option>
-                                  <option>iOS</option>
-                                  <option>Swift</option>
-                                  <option>Ruby on Rails</option>
-                                  <option>SQL</option>
-                                  <option>C</option>
-                                  <option>C++</option>
-                                  <option>C#</option>
-                                  <option>Go</option>
+                                  <option>Choose...</option>
+                                  {this.state.langList.map((item, index) => ( 
+                                    <option>{item}</option>
+                                ))}
                               </Form.Control>
                               <Form.Label>   Familiarity: </Form.Label>
                               <Form.Control
@@ -369,23 +361,10 @@ class RegPt1 extends React.Component {
                               value={tech.name} 
                               className="name"
                               >
-                                  <option>{tech.name}</option>
-                                  <option>ReactJS</option>
-                                  <option>RESTful API</option>
-                                  <option>D3</option>
-                                  <option>Flask</option>
-                                  <option>Django</option>
-                                  <option>MongoDB</option>
-                                  <option>Node.js</option>
-                                  <option>ASP.net</option>
-                                  <option>Angular.js</option>
-                                  <option>Json</option>
-                                  <option>Pandas</option>
-                                  <option>Bootstrap</option>
-                                  <option>Azure</option>
-                                  <option>Google Cloud</option>
-                                  <option>Firebase</option>
-                                  <option>Heroku</option>
+                                  <option>Choose...</option>
+                                  {this.state.techList.map((item, index) => ( 
+                                    <option>{item}</option>
+                                ))}
                               </Form.Control>
                               <Form.Label>   Familiarity: </Form.Label>
                               <Form.Control
@@ -433,26 +412,10 @@ class RegPt1 extends React.Component {
                                 id={interests}
                                 value={interests} 
                                 >
-                                    <option>{interests}</option>
-                                    <option>Artificial Intelligence</option>
-                                    <option>Computer Vision</option>
-                                    <option>Machine Learning</option>
-                                    <option>Medical Imaging</option>
-                                    <option>Theory</option>
-                                    <option>Hardware</option>
-                                    <option>Networks</option>
-                                    <option>Graphics</option>
-                                    <option>Human-Computer Interaction</option>
-                                    <option>Game Development</option>
-                                    <option>Data Visualization</option>
-                                    <option>AR/VR</option>
-                                    <option>UI/UX Design</option>
-                                    <option>Data Science</option>
-                                    <option>iOS Development</option>
-                                    <option>Android Development</option>
-                                    <option>Frontend Development</option>
-                                    <option>Backend Development</option>
-                                    <option>Fullstack Development</option>
+                                    <option>Choose...</option>
+                                  {this.state.intList.map((item, index) => ( 
+                                    <option>{item}</option>
+                                ))}
                                 </Form.Control>
                                 <span>  </span>
                                 <Button variant="danger" onClick={() => this.handleRemoveINTERESTForm(index)}>-</Button>
@@ -480,25 +443,10 @@ class RegPt1 extends React.Component {
                                 value={fields} 
                                 className="name"
                                 >
-                                    <option>{fields}</option>
-                                    <option>Finance</option>
-                                    <option>Health</option>
-                                    <option>Education</option>
-                                    <option>Environment</option>
-                                    <option>Biology</option>
-                                    <option>Chemistry</option>
-                                    <option>Physics</option>
-                                    <option>Mathematics</option>
-                                    <option>Social Networking</option>
-                                    <option>Astronomy</option>
-                                    <option>Human Assistance</option>
-                                    <option>Music</option>
-                                    <option>Art</option>
-                                    <option>Helping Developing Countries</option>
-                                    <option>Cars</option>
-                                    <option>Sports</option>
-                                    <option>Social conflicts</option>
-                                    <option>Disaster Relief</option>
+                                    <option>Choose...</option>
+                                  {this.state.fieldList.map((item, index) => ( 
+                                    <option>{item}</option>
+                                ))}
 
                                     
                                 </Form.Control>

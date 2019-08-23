@@ -21,7 +21,7 @@ class MyForm extends React.Component {
     const { email, password, errMsg } = this.state;
     return (
       <Form inline onSubmit={this.handleLoginSubmit.bind(this)}>
-        <small>-{errMsg}-</small>
+        <small>{errMsg}</small>
         <Form.Group>
             <FormControl
             name="email"

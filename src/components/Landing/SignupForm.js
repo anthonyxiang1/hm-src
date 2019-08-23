@@ -108,9 +108,9 @@ class SignupForm extends React.Component {
           errMsg: "password and confirm password do not match."
         });
   
-        else if (this.state.password.length < 6)
+        else if (this.state.password.length < 8)
           this.setState({
-          errMsg: "password needs to be at least 6 characters long."
+          errMsg: "password needs to be at least 8 characters long."
         });
         
         else {
@@ -125,7 +125,7 @@ class SignupForm extends React.Component {
           console.log(res.data);
           console.log(res.data['auth_token']);
           localStorage.setItem('auth_token', res.data['auth_token']);
-        }).then(res => {this.props.history.push("/register");})
+        }).then(window.scrollTo({ top: 0, left: 0, behavior: 'smooth' }))
   
         // var url = config.endpoint + 'register';
         // var data = JSON.stringify({"name": "kenny GOng", "email":"abc@gmail.com", "password": "qwer"});

@@ -29,7 +29,7 @@ class UserCard extends React.Component {
                                 <Row>
                                     <Col className="text-left">
                                         <Row>
-                                            <img className="d-block mx-auto rounded-circle img-fluid" src={this.state.propic}></img>
+                                            <img className="d-block mx-auto rounded-circle img-fluid" alt="userImg" src={this.state.propic}></img>
 
                                         </Row>
                                         <Row >
