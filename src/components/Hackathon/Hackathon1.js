@@ -23,7 +23,7 @@ class Sec1 extends React.Component {
             school: "Stony Brook University",
             propic: "",
           members: [],
-          teams:  {memberpics: [], name: "", goals: "", id: ""}   
+          teams:  []   
         };
       }
 
@@ -240,6 +240,7 @@ class Sec1 extends React.Component {
                             name: JSON.parse(teams[i])['name'],
                             goals: JSON.parse(teams[i])['goals'],
                             id: JSON.parse(teams[i])['id'],
+                            memberpics: []
                         }])
                         })
                             for (var j=0;j<JSON.parse(teams[i])['members'].length; j++) 
