@@ -24,6 +24,7 @@ class ReactRouter extends React.Component {
       <Route path="/create" exact component={Create}/>
       <Route path="/add" exact component={Add}/>
       <Route path="/team/:id" exact component={TeamPage}/>
+      <Route path="/team" exact component={NotFound}/>
       <Route path="/hackathon" exact component={NotFound} />
       <Route path="/profile" exact component={NotFound} />
       </React.Fragment>
