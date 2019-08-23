@@ -183,14 +183,12 @@ class Create1 extends React.Component {
             var queries = [];
             for(var i = 0; i < hackers.length; i++){
               var hacker = hackers[i];
-              console.log(hacker);
               var query = {
                 'key': i,
                 'value': hacker['value']
               }
               queries.push(query);
             }
-            console.log(queries);
             this.setState({
               available: queries
             });
@@ -201,15 +199,24 @@ class Create1 extends React.Component {
     event.preventDefault();
         //if (this.state.hack !== "" && this.state.idea !== "" && this.state.goal !== "" && this.state.name !== ""){
         //  console.log(this.state);
-          console.log('create clicked');
+          console.log('create clicked - next is frontend fields');
           var hackathonSelected = this.state.hack;
           var url = "https://arcane-fjord-29308.herokuapp.com/teams/new";
           var config = {
             headers: {'Authorization': 'Bearer ' + localStorage.auth_token.toString()}
           };
+
+          var members = this.state.members;
+          var members_arr = [];
+          for(var i = 0; i < members.length; i++){
+            if(typeof members[i]['id'] == 'string'){
+              members_arr.push(members[i]['id']);
+            }
+          }
+          
           var data = {
             'hackathon': hackathonSelected,
-            'members': this.state.members,
+            'members': members_arr || [],
             'name': this.state.name || '',
             'idea': this.state.idea || '',
             'goal': this.state.goal || '',
