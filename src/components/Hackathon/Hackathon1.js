@@ -206,7 +206,7 @@ class Sec1 extends React.Component {
             var config = {
                 headers: {'Authorization': 'Bearer ' + localStorage.auth_token.toString()}
             };
-            axios.get('http://arcane-fjord-29308.herokuapp.com/hackathons/'+hackathonName+'/addmatch', config)
+            axios.get('https://arcane-fjord-29308.herokuapp.com/hackathons/'+hackathonName+'/addmatch', config)
             .then(res => {
                 console.log(res)
                 if(res.status == 200){

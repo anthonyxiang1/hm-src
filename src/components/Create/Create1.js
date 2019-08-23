@@ -203,7 +203,7 @@ class Create1 extends React.Component {
         //  console.log(this.state);
           console.log('create clicked');
           var hackathonSelected = this.state.hack;
-          var url = "https://warm-spire-34930.herokuapp.com/teams/new";
+          var url = "https://arcane-fjord-29308.herokuapp.com/teams/new";
           var config = {
             headers: {'Authorization': 'Bearer ' + localStorage.auth_token.toString()}
           };
