@@ -223,12 +223,22 @@ class Create1 extends React.Component {
             'capacity': 4
             //'details': details
           }
+          var teamId = JSON.parse(res.data)['team_id']
           console.log(data);
+
+          
           axios.post(url, data, config)
             .then(res => {
+
+              if (res.status_code === 402) {
+                alert("one or more users are not registered for this hackathon or is in another team in this hackathon")
+              }
+              else{
               console.log(res);
-              this.props.history.push("/team/" + "5d5f8d22eaf1c5a355ba06d3")
-            });
+              this.props.history.push("/team/" + teamId)
+
+              }
+            })
         //}
   }
 

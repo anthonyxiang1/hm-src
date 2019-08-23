@@ -243,8 +243,8 @@ class Sec1 extends React.Component {
                             id: JSON.parse(teams[i])['id'],
                         }])
                         })
-                            for (var j=0;j<JSON.parse(teams[i])['members'].length; j++)
-                                this.state.memberpics.concat(JSON.parse(JSON.parse(teams[0])['members'][0])['profile_pic'])
+                            for (var j=0;j<JSON.parse(teams[i])['members'].length; j++) 
+                                this.state.memberpics.concat(JSON.parse(JSON.parse(teams[i])['members'][j])['profile_pic'])
                           };
                      })
                
