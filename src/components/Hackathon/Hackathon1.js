@@ -23,7 +23,7 @@ class Sec1 extends React.Component {
             school: "Stony Brook University",
             propic: "",
           members: [],
-          teams: [  {memberpics: []}   ]
+          teams:  {memberpics: [], name: "", goals: "", id: ""}   
         };
       }
 

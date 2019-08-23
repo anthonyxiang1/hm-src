@@ -227,6 +227,7 @@ class Create1 extends React.Component {
             .then(res => {
               var teamId = JSON.parse(res.data)['team_id']
               if (res.status_code === 402) {
+                console.log(res);
                 alert("one or more users are not registered for this hackathon or is in another team in this hackathon")
               }
               else{
