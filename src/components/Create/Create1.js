@@ -199,7 +199,6 @@ class Create1 extends React.Component {
     event.preventDefault();
         //if (this.state.hack !== "" && this.state.idea !== "" && this.state.goal !== "" && this.state.name !== ""){
         //  console.log(this.state);
-          console.log('create clicked - next is frontend fields');
           var hackathonSelected = this.state.hack;
           var url = "https://arcane-fjord-29308.herokuapp.com/teams/new";
           var config = {
@@ -223,13 +222,10 @@ class Create1 extends React.Component {
             'capacity': 4
             //'details': details
           }
-          var teamId = JSON.parse(res.data)['team_id']
-          console.log(data);
 
-          
           axios.post(url, data, config)
             .then(res => {
-
+              var teamId = JSON.parse(res.data)['team_id']
               if (res.status_code === 402) {
                 alert("one or more users are not registered for this hackathon or is in another team in this hackathon")
               }
