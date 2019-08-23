@@ -232,7 +232,7 @@ class Sec1 extends React.Component {
                                                                     preferences: JSON.parse(hackers[i]['hacker'])['preferences'],
                                                                     propic: JSON.parse(hackers[i]['hacker'])['profile_pic']}]) });  
                     }
-                    var teams = res.data['teams'];
+                    var teams = res.data['hackers'];
                     console.log(JSON.parse(teams[0]['id']))
                    
                     //for team
