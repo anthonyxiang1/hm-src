@@ -9,6 +9,7 @@ import TeamPage from '../pages/TeamPage';
 import Hackathon from '../pages/Hackathon';
 import Profile from '../pages/Profile';
 import Home from '../pages/Home';
+import NotFound from '../pages/NotFound';
 
 class ReactRouter extends React.Component {
   render() {
@@ -23,6 +24,7 @@ class ReactRouter extends React.Component {
       <Route path="/create" exact component={Create}/>
       <Route path="/add" exact component={Add}/>
       <Route path="/teampage" exact component={TeamPage}/>
+      <Route path="*" component={NotFound} />
       </React.Fragment>
     );
   }

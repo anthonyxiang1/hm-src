@@ -123,9 +123,19 @@ class SignupForm extends React.Component {
         }).then(res => {
           console.log(res);
           console.log(res.data);
-          console.log(res.data['auth_token']);
-          localStorage.setItem('auth_token', res.data['auth_token']);
-        }).then(window.scrollTo({ top: 0, left: 0, behavior: 'smooth' }))
+          if(res.status_code == 200 || res.data['auth_token']){
+            axios.post(`https://arcane-fjord-29308.herokuapp.com/auth/login`, 
+            {
+              "email":this.state.email,
+              "password":this.state.password
+            }).then(res => {
+              localStorage.setItem('auth_token', res.data['auth_token']);
+            }).then(res => {this.props.history.push("/register");})
+
+          }
+          //console.log(res.data['auth_token']);
+          //localStorage.setItem('auth_token', res.data['auth_token']);
+        }).then(res => {this.props.history.push("/register");})
   
         // var url = config.endpoint + 'register';
         // var data = JSON.stringify({"name": "kenny GOng", "email":"abc@gmail.com", "password": "qwer"});
