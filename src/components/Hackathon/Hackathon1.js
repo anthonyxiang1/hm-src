@@ -23,13 +23,7 @@ class Sec1 extends React.Component {
             school: "Stony Brook University",
             propic: "",
           members: [],
-          teams: [
-              {name: "Found 405", 
-              goals: "i want to win winwin", 
-              propic: ["http://api.randomuser.me/portraits/men/71.jpg", "http://api.randomuser.me/portraits/men/71.jpg", "http://api.randomuser.me/portraits/men/71.jpg"]},
-              {name: "ANOTHER TEAM", goals: "i want tolo hello this is it hello lhewrqer!lo hello this is it hello lhewrqer!lo hello this is it hello lhewrqer! win winwin", propic: ["http://api.randomuser.me/portraits/men/71.jpg", 
-              "http://api.randomuser.me/portraits/men/71.jpg", "http://api.randomuser.me/portraits/men/71.jpg"]}
-            ]
+          teams: []
         };
       }
 
@@ -74,7 +68,7 @@ class Sec1 extends React.Component {
                          <Col xs={{span:12}} sm={{span:12}} md={{span:4, order:2}} lg={{span:4, order:2}} xl={{span:4, order:2}}>
                             <img id="hackathonImg"
                                 alt="hackathonImg"
-                                src={require("./stuyhacks.png")}
+                                src={this.state.propic}
                                 className="hackathonImg">
                             </img>
                         </Col>
@@ -237,16 +231,24 @@ class Sec1 extends React.Component {
                    
                     //for team
 
+                    console.log(JSON.parse(teams[0])['id'])
+                    console.log(JSON.parse(teams[0])['members'].length)
+                    console.log(JSON.parse(teams[0])['members'][0])
+
                     for (var i=0;i<teams.length;i++) {
                         this.setState({ teams: this.state.teams.concat([{
                             name: JSON.parse(teams[i])['name'],
                             goals: JSON.parse(teams[i])['goals'],
                             id: JSON.parse(teams[i])['id'],
-                            propic: JSON.parse(teams[i])['profile_pic']
                         }])
-                        })};
-                     
-                })
+                        })
+                            for (var j=0;j<JSON.parse(teams[i])['members'].length; j++)
+                                this.setState({ teams: this.state.teams.concat([{
+                                    propic: JSON.parse(teams[i])['members'][j]['propic']
+                                }])
+                                })
+                            };
+                     })
                
             }).catch((err) =>{      //todo: handle error
                 console.log(err);
