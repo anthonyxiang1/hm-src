@@ -247,7 +247,11 @@ class Sec1 extends React.Component {
                                 this.state.memberpics.concat(JSON.parse(JSON.parse(teams[i])['members'][j])['profile_pic'])
                           };
                      })
-               
+
+                     
+               console.log(this.state.memberpics)
+
+
             }).catch((err) =>{      //todo: handle error
                 console.log(err);
             });
