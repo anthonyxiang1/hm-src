@@ -227,11 +227,8 @@ class Sec1 extends React.Component {
                                                                     propic: JSON.parse(hackers[i]['hacker'])['profile_pic']}]) });  
                     }
                     var teams = res.data['teams'];
-                    console.log(JSON.parse(teams[0])['id'])
-                   
                     //for team
 
-                    console.log(JSON.parse(teams[0])['id'])
                     console.log(JSON.parse(teams[0])['members'].length)
                     console.log(JSON.parse(teams[0])['members'][0])
 
@@ -244,7 +241,7 @@ class Sec1 extends React.Component {
                         })
                             for (var j=0;j<JSON.parse(teams[i])['members'].length; j++)
                                 this.setState({ teams: this.state.teams.concat([{
-                                    propic: JSON.parse(teams[i])['members'][j]['propic']
+                                    propic: JSON.parse(teams[i])['members'][j]['profile_pic']
                                 }])
                                 })
                             };

@@ -227,7 +227,7 @@ class Create1 extends React.Component {
           axios.post(url, data, config)
             .then(res => {
               console.log(res);
-              //this.props.history.push("/team" + teamId)
+              this.props.history.push("/team/" + "5d5f8d22eaf1c5a355ba06d3")
             });
         //}
   }
