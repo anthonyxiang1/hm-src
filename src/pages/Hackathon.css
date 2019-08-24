@@ -15,6 +15,7 @@
 }*/
 .teamcard .rounded-circle {
     width: 60px;
+    height: 60px;
 }
 
 .namebox{
@@ -163,6 +164,11 @@ img.hackathonImg{
         height:250px;
     }
 
+    .teamcard .rounded-circle {
+        width: 40px;
+        height: 40px;
+    }
+
 }
 /*MD*/
 @media (min-width: 768px) { 
@@ -210,6 +216,7 @@ img.hackathonImg{
     }
     .teamcard .rounded-circle {
         width: 80px;
+        height: 80px;
     }
 
 }
@@ -226,10 +233,10 @@ img.hackathonImg{
        
         width:25%;
     }
-    .teamcard .rounded-circle {
-    
+    /* .teamcard .rounded-circle {
+        
         width: 6.1rem;
-    }
+    } */
     /*
     .usercard{
         width: 28rem;
