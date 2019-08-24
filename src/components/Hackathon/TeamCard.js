@@ -8,7 +8,8 @@ class TeamCard extends React.Component {
         this.state = {
             name: (props.name != null) ? props.name: '------', 
             goals: (props.goals != null) ? props.goals: '------', 
-            propic: (props.propic != null) ? props.propic: require("./graysquare.png"),
+            // propic: (props.propic != null) ? props.propic: require("./graysquare.png"),
+            propic: ['http://api.randomuser.me/portraits/men/28.jpg', 'http://api.randomuser.me/portraits/women/48.jpg', 'http://api.randomuser.me/portraits/men/18.jpg'],
             id: (props.id != null) ? props.id: "",
         };
       }
