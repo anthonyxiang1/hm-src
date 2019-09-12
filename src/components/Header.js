@@ -24,7 +24,7 @@ class Header extends React.Component {
                 </Nav>
                 
                 <Nav.Link href="/add">
-                Add to Team
+                Edit Team
                   </Nav.Link>
 
               <Nav.Link href="/create">
@@ -37,7 +37,7 @@ class Header extends React.Component {
                   <NavDropdown.Item href="/">Log out</NavDropdown.Item>
                 </NavDropdown>
                 
-                <Nav.Link href="/chat">
+                {/* <Nav.Link href="/chat">
                   <img
                   alt=""
                   src={require("./Landing/assets/chatImage.png")}
@@ -46,7 +46,7 @@ class Header extends React.Component {
                   className="d-inline-block align-top"
                 />
                 Messages
-                  </Nav.Link>
+                  </Nav.Link> */}
               </Navbar.Collapse>
             </Navbar>
           </div>

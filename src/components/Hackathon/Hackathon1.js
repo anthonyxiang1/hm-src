@@ -74,7 +74,7 @@ class Sec1 extends React.Component {
                             </img>
                         </Col>
                         <Col id="date" xs={{span:12}} sm={{span:12}} md={{span:4, order:1}} lg={{span:4, order:1}} xl={{span:4, order:1}} className="date">{this.state.startDate}-{this.state.endDate}</Col>
-                        <Col id="location" xs={{span:12}} sm={{span:12}} md={{span:4, order:3}} lg={{span:4, order:3}} xl={{span:4, order:3}} className="location">{this.state.address}, {this.state.hackLoc}</Col>
+                        <Col id="location" xs={{span:12}} sm={{span:12}} md={{span:4, order:3}} lg={{span:4, order:3}} xl={{span:4, order:3}} className="location">{this.state.hackLoc}</Col>
                     </Row>
                 </Container>
 
@@ -232,7 +232,8 @@ class Sec1 extends React.Component {
 
                     console.log(JSON.parse(teams[0])['members'].length)
                     console.log(JSON.parse(JSON.parse(teams[0])['members'][0]))
-                    console.log("propic link")
+                    console.log("PUT YOUR CODE HERE")
+                    
                     console.log(JSON.parse(JSON.parse(teams[0])['members'][0])['profile_pic'])
 
                     for (var i=0;i<teams.length;i++) {

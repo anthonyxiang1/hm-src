@@ -26,7 +26,7 @@ class HackathonCard extends React.Component {
                   <div className="profileinfo">
                       <a href={`/hackathon/${this.state.hackInfo.name}`}><h1>{this.state.hackInfo.name}</h1></a>
                       <i>{this.state.hackInfo.school}</i>
-                      <p className="bio">{this.state.hackInfo.start_date}-{this.state.hackInfo.end_date}</p>
+                      <p className="bio">{this.state.hackInfo.start_date} - {this.state.hackInfo.end_date}</p>
                       <p className="bio">{this.state.hackInfo.city}, {this.state.hackInfo.state}</p>
                   </div>
                 </div>

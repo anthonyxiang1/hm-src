@@ -17,12 +17,14 @@ class Pt1 extends React.Component {
           src={require("./assets/landing_demo.gif")}
         />
 
-        <h2>
-          Meet your perfect team
-        </h2>
+        <h3>
+          
+          Find your perfect hackathon team
+        </h3>
+        <br></br>
 
-        <Button className="btn btn-success" id="scrollToSignup" onClick={()=>window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' })}>
-          Try Hacker Matcher
+        <Button className="btn btn-primary btn-lg" id="scrollToSignup" onClick={()=>window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' })}>
+          Try It Now!
         </Button>
       </div>
     </div>

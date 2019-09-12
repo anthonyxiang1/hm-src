@@ -284,7 +284,7 @@ class Account1 extends React.Component {
             {
             vals.map(function(item) {
                 if (item !== "")
-                 return <SocialIcon url={item} style={{ height: 35, width: 35}}/>
+                 return <SocialIcon url={item} style={{ height: 50, width: 50}}/>
                 })
             }
         </div>
@@ -822,7 +822,7 @@ class Account1 extends React.Component {
                 </Col>
             </Row>
 
-            <Row>
+            {/* <Row>
                 <Col >
                     <div >
                         <UpdatePassword />
@@ -834,7 +834,7 @@ class Account1 extends React.Component {
                         <DeleteAccount />
                     </div>
                 </Col>
-            </Row>
+            </Row> */}
 
         </Container>
 

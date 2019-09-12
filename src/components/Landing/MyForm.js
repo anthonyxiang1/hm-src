@@ -32,6 +32,7 @@ class MyForm extends React.Component {
             onChange={this.handleLoginChange}
             />
         </Form.Group>
+        
         <Form.Group>
             <FormControl
             name="password"
@@ -70,6 +71,8 @@ class MyForm extends React.Component {
         console.log(res.data['auth_token']);
         localStorage.setItem('auth_token', res.data['auth_token']);
         
+      }).catch(err =>{
+        console.log(err);
       }).then(res => {this.props.history.push("/home");})
       
     

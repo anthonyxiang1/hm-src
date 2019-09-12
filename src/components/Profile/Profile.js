@@ -68,7 +68,7 @@ class Profile1 extends React.Component {
         <div>
             {
             vals.map((item) => ( 
-        <SocialIcon url={item} style={{ height: 35, width: 35}}/>
+        <SocialIcon url={item} style={{ height: 50, width: 50}}/>
             ))
             }
         </div>
@@ -116,8 +116,8 @@ class Profile1 extends React.Component {
                     </div>
                     <br></br>
 
-                    <Button variant="info" size="lg" onClick = {this.handleClick}>Start Messaging</Button>
-                    
+                    {/* <Button variant="info" size="lg" onClick = {this.handleClick}>Start Messaging</Button> */}
+
                 </Col>
 
                 <Col className ="about">

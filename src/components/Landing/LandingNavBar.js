@@ -16,6 +16,7 @@ class NavigationBar extends React.Component {
               height="30"
               className="d-inline-block align-top"
             />
+            <span>   </span>
             Hacker Matcher
               </Navbar.Brand>
               
